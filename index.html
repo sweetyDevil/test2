@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id = "test">
+
+</div>
+<script>
+    function se() {
+        fetch("http://localhost:63342/test2/test2.php")
+            .then((response) => {
+                console.log(response)
+                return response.json()
+            })
+            .then((data) =>{
+                if (data.number%2 === 0){
+                    document.getElementById("test").innerHTML = "<img src=\"222.jpg\" alt=\"Italian Trulli\" height=\"200\">"
+                }
+                else {
+                    document.getElementById("test").innerHTML = "<img src=\"311871-blackangel_2048x1152.jpg\" alt=\"Italian Trulli\" height=\"200\">"
+                }
+
+            } )
+        setInterval(se,2000)
+    }
+ se()
+</script>
+</body>
+</html>
